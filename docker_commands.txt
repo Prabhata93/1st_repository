@@ -43,3 +43,24 @@ sudo docker run -it ubuntu /bin/bash
 
 Execute Command in a Running Container
 sudo docker exec -it <container_id> /bin/bash
+
+
+dileep kumar .S  08:27
+sudo docker ps
+
+sudo docker stop abc12345
+
+sudo docker stop $(sudo docker ps -q)
+
+sudo docker rm abc12345
+
+
+sudo docker run -d -p 80:80 nginxdemos/hello
+
+
+
+mkdir ~/html
+echo "<h1>Hello World from EC2! Dileep Docker </h1>" > ~/html/index.html
+echo "<h1>welcome to my webpage </h1>" >> ~/html/index.html
+
+sudo docker run -d -p 80:80 -v ~/html:/usr/share/nginx/html:ro nginx
