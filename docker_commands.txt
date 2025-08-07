@@ -64,3 +64,26 @@ echo "<h1>Hello World from EC2! Dileep Docker </h1>" > ~/html/index.html
 echo "<h1>welcome to my webpage </h1>" >> ~/html/index.html
 
 sudo docker run -d -p 80:80 -v ~/html:/usr/share/nginx/html:ro nginx
+
+
+dileep kumar .S
+07:57
+sudo docker ps
+
+sudo docker stop abc12345
+
+sudo docker stop $(sudo docker ps -q)
+
+sudo docker rm abc12345
+
+
+sudo docker run -d -p 80:80 nginxdemos/hello
+
+
+
+mkdir ~/html
+echo "<h1>Hello World from EC2! Dileep Docker </h1>" > ~/html/index.html
+echo "<h1>welcome to my webpage </h1>" >> ~/html/index.html
+
+
+sudo docker run -d -p 80:80 -v ~/html:/usr/share/nginx/html:ro nginx
