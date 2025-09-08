@@ -1,0 +1,54 @@
+Linux interview Q & A :
+
+1. What do you know about Linux?
+   Linux is an open-source, Unix-like operating system kernel used in servers, desktops, and embedded systems. It’s known for stability, security, and flexibility.
+
+2. What are the different Linux operating systems?
+   Popular distros: ec2 Ubuntu, ec2 Amazon linux, ec2 windows, ec2 mac, Debian, CentOS, RHEL, Fedora, Arch Linux, SUSE, Kali, etc.
+
+3. How to find error logs?
+   Usually in /var/log/, e.g., /var/log/syslog, /var/log/messages, /var/log/dmesg, /var/log/auth.log.
+
+4. What is the use of sudo command?
+   Runs as a administator, Runs commands as another user (mostly root) with proper privileges.
+
+5. Why use ps command?
+   To display currently running processes and their details.
+
+6. How do you check grep command?
+   grep "pattern" filename → searches for text patterns inside files.
+
+7. Difference between su and sudo.
+   su: switch user, requires root password.
+   sudo: execute single command as root, requires current user’s password (if allowed).
+
+8. How to check disk usage of a directory?
+   du -sh /path/to/dir
+
+9. What does df -h and du -sh show?
+   df -h: shows free/used space on all mounted filesystems.
+   du -sh: shows disk usage of a specific directory.
+
+10. How to find top 10 CPU-consuming processes?
+    ps -eo pid,ppid,cmd,%cpu,%mem --sort=-%cpu | head -n 11
+
+11. What’s the difference between ps aux and top?
+    ps aux: snapshot of running processes at one moment.
+    top: dynamic, real-time view of processes.
+
+12. How to kill a process by name or PID?
+    By PID: kill -9 <pid>
+    By name: pkill processname
+
+13. How to check which port a process is listening on?
+    netstat -tulnp or ss -tulnp
+
+14. Explain difference between absolute and relative paths?
+    Absolute: full path from root / (e.g., /home/user/file.txt).
+    Relative: path relative to current working directory (e.g., ../file.txt).
+
+15. How to search for a string inside files? (grep)
+    grep "string" file.txt or recursive: grep -r "string" /path
+
+16. How to check last 50 lines of a log file and keep watching updates?
+    tail -n 50 -f logfile.log
