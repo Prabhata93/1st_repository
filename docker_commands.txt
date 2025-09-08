@@ -82,7 +82,8 @@ sudo docker run -d -p 80:80 -v ~/html:/usr/share/nginx/html:ro nginx
 sudo apt remove docker docker-engine docker.io containerd runc
 
 #2. Update and install prerequisites
-sudo apt remove docker docker-engine docker.io containerd runc
+sudo apt update
+sudo apt install ca-certificates curl gnupg lsb-release -y
 
 #3. Add Docker’s official GPG key
 sudo mkdir -p /etc/apt/keyrings
@@ -117,4 +118,27 @@ sudo docker run -d -p 80:80 -v ~/html:/usr/share/nginx/html:ro nginx
 --------------------------------------------------------------
 
 
+
+
+
+
+
+# install ssm agent on ec2 ubuntu instance
+------------------------------------------ 
+
+sudo snap switch --channel=candidate amazon-ssm-agent
+
+sudo systemctl start snap.amazon-ssm-agent.amazon-ssm-agent.service
+
+sudo systemctl stop snap.amazon-ssm-agent.amazon-ssm-agent.service
+
+sudo systemctl status snap.amazon-ssm-agent.amazon-ssm-agent.service
+
+sudo snap install amazon-ssm-agent --classic
+
+sudo snap list amazon-ssm-agent
+
+sudo snap start amazon-ssm-agent
+
+sudo snap services amazon-ssm-agent
 
